@@ -1,5 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:meals/routes/app.routes.dart';
 import 'package:meals/view/categories_screen.page.dart';
+import 'package:meals/view/category_meals.page.dart';
+import 'package:meals/view/meals_detail.page.dart';
 
 void main() => runApp(const MyApp());
 
@@ -26,11 +30,15 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSwatch(
           primarySwatch: Colors.pink,
         ).copyWith(
-          secondary: Colors.amber,
+          secondary: Colors.white,
         ),
-        canvasColor: const Color.fromARGB(255, 254, 229, 1),
+        canvasColor: const Color.fromARGB(255, 255, 255, 190),
       ),
-      home: const CategoriesScreen(),
+      routes: {
+        AppRoutes.HOME: (ctx) => const CategoriesScreen(),
+        AppRoutes.CATEGORIES_MEALS: (ctx) => const CategoriesMealsPage(),
+        AppRoutes.MEALS_DETAIL: (ctx) => const MealDetailPage(),
+      },
     );
   }
 }
