@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:meals/routes/app.routes.dart';
 import 'package:meals/view/categories_screen.page.dart';
@@ -30,7 +29,7 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSwatch(
           primarySwatch: Colors.pink,
         ).copyWith(
-          secondary: Colors.white,
+          secondary: Colors.amberAccent,
         ),
         canvasColor: const Color.fromARGB(255, 255, 255, 190),
       ),
