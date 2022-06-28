@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class FavoriteScreen extends StatelessWidget {
-  const FavoriteScreen({
+class FavoriteScreenPage extends StatelessWidget {
+  const FavoriteScreenPage({
     Key? key,
   }) : super(key: key);
 
