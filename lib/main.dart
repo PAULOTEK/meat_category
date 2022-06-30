@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:meals/config/settings.page.dart';
 import 'package:meals/routes/app.routes.dart';
 import 'package:meals/view/category_meals.page.dart';
 import 'package:meals/view/meals_detail.page.dart';
-import 'package:meals/view/tabs_screen.page.dart';
+import 'package:meals/widget/tabs_screen.page.dart';
 
 void main() => runApp(const MyApp());
 
@@ -34,9 +35,10 @@ class _MyAppState extends State<MyApp> {
         canvasColor: const Color.fromARGB(255, 255, 255, 190),
       ),
       routes: {
-        AppRoutes.HOME: (ctx) => const TabsScreenPage(),
+        AppRoutes.HOME: (ctx) => const TabsScreenWidget(),
         AppRoutes.CATEGORIES_MEALS: (ctx) => const CategoriesMealsPage(),
         AppRoutes.MEALS_DETAIL: (ctx) => const MealDetailPage(),
+        AppRoutes.SETTINGS: (ctx) => const SettingsPage(),
       },
     );
   }
