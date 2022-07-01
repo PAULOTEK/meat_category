@@ -65,6 +65,10 @@ class MealDetailPage extends StatelessWidget {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.of(context).pop(meals.title),
+        child: const Icon(Icons.star),
+      ),
     );
   }
 

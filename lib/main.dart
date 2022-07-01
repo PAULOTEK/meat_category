@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:meals/config/settings.page.dart';
+import 'package:meals/config/settings.dart';
 import 'package:meals/routes/app.routes.dart';
 import 'package:meals/view/category_meals.page.dart';
 import 'package:meals/view/meals_detail.page.dart';
-import 'package:meals/widget/tabs_screen.page.dart';
+import 'package:meals/widget/tabs_screen.widget.dart';
 
 void main() => runApp(const MyApp());
 

@@ -32,9 +32,19 @@ class CategoryItem extends StatelessWidget {
   }
 
   void _selectCategory(BuildContext context) {
-    Navigator.of(context).pushNamed(
+    Navigator.of(context)
+        .pushNamed(
       AppRoutes.CATEGORIES_MEALS,
       arguments: category!,
+    )
+        .then(
+      (value) {
+        if (value == null) {
+          print('sem resultado');
+        } else {
+          print('com resoltado $value');
+        }
+      },
     );
   }
 }
