@@ -3,14 +3,23 @@ import 'package:meals/model/settings.model.dart';
 import 'package:meals/widget/main_menu.dart';
 
 class SettingsPage extends StatefulWidget {
-  const SettingsPage({Key? key}) : super(key: key);
+  const SettingsPage({Key? key, required this.onSettingChanged, required this.settingsModel})
+      : super(key: key);
+
+  final Function(SettingsModel) onSettingChanged;
+  final SettingsModel settingsModel;
 
   @override
   State<SettingsPage> createState() => _SettingsPageState();
 }
 
 class _SettingsPageState extends State<SettingsPage> {
-  final settingsModel = SettingsModel();
+  late SettingsModel settingsModel;
+  @override
+  void initState() {
+    super.initState();
+    settingsModel = widget.settingsModel;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +89,10 @@ class _SettingsPageState extends State<SettingsPage> {
       title: Text(tittle),
       subtitle: Text(subtitle),
       value: value,
-      onChanged: onClick,
+      onChanged: (value) {
+        onClick(value);
+        widget.onSettingChanged(settingsModel);
+      },
     );
   }
 }

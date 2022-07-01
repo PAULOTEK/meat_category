@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:meals/model/meals.dart';
 import 'package:meals/routes/app.routes.dart';
@@ -94,9 +95,21 @@ class MealsItemWidget extends StatelessWidget {
   }
 
   void _selectMeal(BuildContext context) {
-    Navigator.of(context).pushNamed(
+    Navigator.of(context)
+        .pushNamed(
       AppRoutes.MEALS_DETAIL,
       arguments: meal,
-    );
+    )
+        .then((result) {
+      if (result != null) {
+        if (kDebugMode) {
+          print('O nome da refeição é $result.');
+        }
+      } else {
+        if (kDebugMode) {
+          print('Sem resultado!');
+        }
+      }
+    });
   }
 }
